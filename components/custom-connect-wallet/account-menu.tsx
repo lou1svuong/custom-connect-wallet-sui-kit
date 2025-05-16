@@ -25,6 +25,7 @@ import { Badge } from "../ui/badge";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import { toast } from "sonner";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import { Unplug } from "lucide-react";
 
 const NETWORKS = [
   { id: "sui:mainnet", name: "Mainnet" },
@@ -119,7 +120,7 @@ export function AccountMenu({ onClose }: { onClose: () => void }) {
             <AvatarImage
               src={`https://api.dicebear.com/7.x/bottts/svg?seed=${currentAccount.address}`}
               alt={currentAccount.address}
-              className="rounded-full bg-muted p-1 select-none"
+              className="rounded-full bg-muted p-1 select-none animate-pulse animate-duration-700 hover:animate-none hover:scale-105 hover:rotate-[10deg]  transition-all duration-300"
             />
             <AvatarFallback className="rounded-full">
               {currentAccount.address?.charAt(0)}
@@ -128,7 +129,9 @@ export function AccountMenu({ onClose }: { onClose: () => void }) {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[320px]">
-        <DropdownMenuLabel>Switch Account</DropdownMenuLabel>
+        <DropdownMenuLabel className="text-muted-foreground font-bold">
+          Your Wallet
+        </DropdownMenuLabel>
         <DropdownMenuSeparator />
         <div className="px-2 py-1.5">
           <div className="flex items-center justify-between text-sm">
@@ -238,8 +241,13 @@ export function AccountMenu({ onClose }: { onClose: () => void }) {
         </div>
 
         <DropdownMenuSeparator />
-        <DropdownMenuItem onClick={onClose} className="text-destructive">
+        <DropdownMenuItem
+          onClick={onClose}
+          variant="destructive"
+          className="flex justify-between items-center"
+        >
           Disconnect
+          <Unplug size={14} />
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
