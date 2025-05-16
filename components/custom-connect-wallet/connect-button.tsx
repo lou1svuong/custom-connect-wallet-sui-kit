@@ -27,7 +27,7 @@ export function ConnectButton({ className }: { className?: string }) {
       ) : (
         <Button
           onClick={() => setIsModalOpen(true)}
-          className={cn(className, "h-full border-dashed")}
+          className={cn(className, "h-full border-dashed cursor-pointer")}
           size="lg"
           variant="ghost"
           asChild
