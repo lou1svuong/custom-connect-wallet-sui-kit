@@ -58,11 +58,7 @@ export default function Hero() {
             );
           })}
           <Button asChild>
-            <Link
-              href="/assets/resume.pdf"
-              target="_blank"
-              className="gap-2 group"
-            >
+            <Link href="/" className="gap-2 group">
               <span>Get Started</span>
               <ArrowRight className="size-4 group-hover:translate-x-1 transition-all duration-150" />
             </Link>

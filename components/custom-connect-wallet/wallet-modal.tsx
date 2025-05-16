@@ -114,7 +114,7 @@ export function WalletModal({ open, onOpenChange }: WalletModalProps) {
               </div>
               <div className="flex flex-col items-center gap-2">
                 <Link
-                  href="/learn-more"
+                  href="/understanding-web3"
                   className="text-sm text-muted-foreground font-semibold"
                 >
                   Learn more
