@@ -7,8 +7,8 @@ export default function Home() {
     <div className="w-full md:overflow-hidden flex flex-col items-center justify-center">
       <div className="w-full max-w-7xl mx-auto border border-dashed flex flex-col my-2">
         <Hero />
-        <LogoCloud />
         <Feature />
+        <LogoCloud />
       </div>
     </div>
   );

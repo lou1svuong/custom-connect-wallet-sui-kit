@@ -75,7 +75,7 @@ export function WalletModal({ open, onOpenChange }: WalletModalProps) {
               <div className="flex flex-col gap-2">
                 <div className="flex items-start gap-3 mb-4">
                   <Image
-                    src="./assets/connect-wallet-modal/wallet-1.svg"
+                    src="/assets/connect-wallet-modal/wallet-1.png"
                     alt="Wallet"
                     width={48}
                     height={48}
@@ -86,13 +86,13 @@ export function WalletModal({ open, onOpenChange }: WalletModalProps) {
                     </div>
                     <div className="text-sm text-muted-foreground">
                       Wallets are used to send, receive, store, and display
-                      digital assets like Ethereum and NFTs.
+                      digital assets like SUI and NFTs.
                     </div>
                   </div>
                 </div>
                 <div className="flex items-start gap-3 mb-6">
                   <Image
-                    src="./assets/connect-wallet-modal/wallet-2.svg"
+                    src="/assets/connect-wallet-modal/wallet-2.png"
                     alt="Wallet"
                     width={48}
                     height={48}
