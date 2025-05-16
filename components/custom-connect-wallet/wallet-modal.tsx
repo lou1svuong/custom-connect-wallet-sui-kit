@@ -6,6 +6,7 @@ import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../ui/dialog";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import Link from "next/link";
+import { toast } from "sonner";
 
 interface WalletModalProps {
   open: boolean;
@@ -25,6 +26,7 @@ export function WalletModal({ open, onOpenChange }: WalletModalProps) {
       return;
     }
     select(walletName);
+    toast.success("Connect Wallet Successfully");
     onOpenChange(false);
   };
 

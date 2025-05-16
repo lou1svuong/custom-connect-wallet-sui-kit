@@ -5,8 +5,9 @@ import { useState } from "react";
 import { Button } from "../ui/button";
 import { AccountMenu } from "./account-menu";
 import { WalletModal } from "./wallet-modal";
-import { ArrowUpRight, PlugZap } from "lucide-react";
+import { PlugZap } from "lucide-react";
 import { cn } from "@/lib/utils";
+import { toast } from "sonner";
 
 export function ConnectButton({ className }: { className?: string }) {
   const { connected, disconnect } = useWallet();
@@ -14,6 +15,7 @@ export function ConnectButton({ className }: { className?: string }) {
 
   const handleDisconnect = () => {
     disconnect();
+    toast.success("Disconnect Wallet Successfully");
   };
 
   return (
