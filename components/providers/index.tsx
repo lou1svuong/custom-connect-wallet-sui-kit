@@ -14,7 +14,7 @@ export default function RootProviders({
       enableSystem
       disableTransitionOnChange
     >
-      <Toaster position="top-right" />
+      <Toaster position="bottom-right" closeButton />
       <WalletProviders>{children}</WalletProviders>
     </ThemeProvider>
   );

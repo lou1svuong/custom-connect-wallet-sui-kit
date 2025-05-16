@@ -22,9 +22,9 @@ import {
   IconCircleCheck,
   IconCircle,
 } from "@tabler/icons-react";
-import { toast } from "sonner";
 import { Badge } from "../ui/badge";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
+import { toast } from "sonner";
 
 const NETWORKS = [
   { id: "sui:mainnet", name: "Mainnet" },

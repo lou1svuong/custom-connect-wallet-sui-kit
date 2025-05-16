@@ -30,7 +30,7 @@ export function WalletModal({ open, onOpenChange }: WalletModalProps) {
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="lg:max-w-4xl">
+      <DialogContent className="lg:max-w-4xl border-dashed">
         <div className="flex flex-col md:flex-row h-full">
           {/* Left: Wallet List */}
           <div className="w-full p-6 flex flex-col gap-4">
@@ -43,7 +43,7 @@ export function WalletModal({ open, onOpenChange }: WalletModalProps) {
                   key={wallet.name}
                   variant="outline"
                   className={cn(
-                    "w-full justify-start gap-2 h-12",
+                    "w-full justify-start gap-2 h-12 border-dashed",
                     !wallet.installed && "opacity-50"
                   )}
                   onClick={() => handleWalletSelect(wallet.name)}
