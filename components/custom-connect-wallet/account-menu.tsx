@@ -18,13 +18,14 @@ import {
 import {
   IconCopy,
   IconCopyCheck,
-  IconChevronDown,
   IconCircleCheck,
   IconCircle,
 } from "@tabler/icons-react";
 import { Badge } from "../ui/badge";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import { toast } from "sonner";
+import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
+import avatar from "animal-avatar-generator";
 
 const NETWORKS = [
   { id: "sui:mainnet", name: "Mainnet" },
@@ -110,11 +111,21 @@ export function AccountMenu({ onClose }: { onClose: () => void }) {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger asChild>
-        <Button>
-          <span className="mr-2">
-            {truncateAddress(currentAccount.address)}
-          </span>
-          <IconChevronDown className="ml-auto h-4 w-4" />
+        <Button
+          variant="ghost"
+          className={cn("size-14 aspect-square p-2")}
+          asChild
+        >
+          <Avatar>
+            <AvatarImage
+              src={`https://api.dicebear.com/7.x/bottts/svg?seed=${currentAccount.address}`}
+              alt={currentAccount.address}
+              className="rounded-full bg-muted p-1"
+            />
+            <AvatarFallback className="rounded-full">
+              {currentAccount.address?.charAt(0)}
+            </AvatarFallback>
+          </Avatar>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="end" className="w-[320px]">
