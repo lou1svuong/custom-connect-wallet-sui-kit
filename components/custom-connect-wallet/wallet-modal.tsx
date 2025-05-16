@@ -39,7 +39,13 @@ export function WalletModal({ open, onOpenChange }: WalletModalProps) {
             <DialogHeader className="mb-2">
               <DialogTitle className="text-lg">Connect Wallet</DialogTitle>
             </DialogHeader>
-            <div className="flex flex-col gap-2 overflow-y-auto max-h-[350px] pr-2">
+            <div
+              className="flex flex-col gap-2 overflow-y-auto max-h-[350px] pr-2 [&::-webkit-scrollbar]:w-2
+  [&::-webkit-scrollbar-track]:bg-gray-100
+  [&::-webkit-scrollbar-thumb]:bg-gray-300
+  dark:[&::-webkit-scrollbar-track]:bg-neutral-700
+  dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
+            >
               {[...configuredWallets, ...detectedWallets].map((wallet) => (
                 <Button
                   key={wallet.name}
@@ -106,12 +112,21 @@ export function WalletModal({ open, onOpenChange }: WalletModalProps) {
                   </div>
                 </div>
               </div>
-              <Link
-                href="/learn-more"
-                className="text-sm text-muted-foreground font-semibold"
-              >
-                Learn more
-              </Link>
+              <div className="flex flex-col items-center gap-2">
+                <Link
+                  href="/learn-more"
+                  className="text-sm text-muted-foreground font-semibold"
+                >
+                  Learn more
+                </Link>
+                <Link
+                  href="https://x.com/lou1sgudboiz"
+                  className="text-xs text-muted-foreground font-semibold underline"
+                  target="_blank"
+                >
+                  By Lou1s
+                </Link>
+              </div>
             </div>
           </div>
         </div>
