@@ -4,6 +4,8 @@ import { useWallet } from "@suiet/wallet-kit";
 import { Button } from "../ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "../ui/dialog";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
+import Link from "next/link";
 
 interface WalletModalProps {
   open: boolean;
@@ -17,48 +19,99 @@ export function WalletModal({ open, onOpenChange }: WalletModalProps) {
     const wallet = [...configuredWallets, ...detectedWallets].find(
       (w) => w.name === walletName
     );
-
     if (!wallet?.installed) {
       // You can add a toast notification here
       window.open(wallet?.downloadUrl?.browserExtension, "_blank");
       return;
     }
-
     select(walletName);
     onOpenChange(false);
   };
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="sm:max-w-[425px]">
-        <DialogHeader>
-          <DialogTitle>Connect Wallet</DialogTitle>
-        </DialogHeader>
-        <div className="grid gap-4 py-4">
-          {[...configuredWallets, ...detectedWallets].map((wallet) => (
-            <Button
-              key={wallet.name}
-              variant="outline"
-              className={cn(
-                "w-full justify-start gap-2",
-                !wallet.installed && "opacity-50"
-              )}
-              onClick={() => handleWalletSelect(wallet.name)}
-            >
-              {wallet.iconUrl && (
-                <img
-                  src={wallet.iconUrl}
-                  alt={wallet.name}
-                  className="w-6 h-6"
-                />
-              )}
-              <span>
-                {wallet.installed
-                  ? `Connect to ${wallet.name}`
-                  : `Install ${wallet.name}`}
-              </span>
-            </Button>
-          ))}
+      <DialogContent className="lg:max-w-4xl">
+        <div className="flex flex-col md:flex-row h-full">
+          {/* Left: Wallet List */}
+          <div className="w-full p-6 flex flex-col gap-4">
+            <DialogHeader className="mb-2">
+              <DialogTitle className="text-lg">Connect Wallet</DialogTitle>
+            </DialogHeader>
+            <div className="flex flex-col gap-2 overflow-y-auto max-h-[350px] pr-2">
+              {[...configuredWallets, ...detectedWallets].map((wallet) => (
+                <Button
+                  key={wallet.name}
+                  variant="outline"
+                  className={cn(
+                    "w-full justify-start gap-2 h-12",
+                    !wallet.installed && "opacity-50"
+                  )}
+                  onClick={() => handleWalletSelect(wallet.name)}
+                >
+                  {wallet.iconUrl && (
+                    <img
+                      src={wallet.iconUrl}
+                      alt={wallet.name}
+                      className="w-6 h-6"
+                    />
+                  )}
+                  <span>
+                    {wallet.installed
+                      ? `Connect to ${wallet.name}`
+                      : `Install ${wallet.name}`}
+                  </span>
+                </Button>
+              ))}
+            </div>
+          </div>
+          {/* Right: Onboarding Info */}
+          <div className="hidden lg:flex w-full p-6 flex-col items-center justify-center gap-6">
+            <div className="w-full flex flex-col gap-6 items-center justify-between">
+              <div className="text-xl font-bold mb-4 text-center md:text-left">
+                What is a Wallet?
+              </div>
+              <div className="flex flex-col gap-2">
+                <div className="flex items-start gap-3 mb-4">
+                  <Image
+                    src="./assets/connect-wallet-modal/wallet-1.svg"
+                    alt="Wallet"
+                    width={48}
+                    height={48}
+                  />
+                  <div>
+                    <div className="font-semibold">
+                      A Home for your Digital Assets
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      Wallets are used to send, receive, store, and display
+                      digital assets like Ethereum and NFTs.
+                    </div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3 mb-6">
+                  <Image
+                    src="./assets/connect-wallet-modal/wallet-2.svg"
+                    alt="Wallet"
+                    width={48}
+                    height={48}
+                  />
+                  <div>
+                    <div className="font-semibold">A New Way to Log In</div>
+                    <div className="text-sm text-muted-foreground">
+                      Instead of creating new accounts and passwords on every
+                      website, just connect your wallet.
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <Link
+                href="/learn-more"
+                className="text-sm text-muted-foreground font-semibold"
+              >
+                Learn more
+              </Link>
+            </div>
+          </div>
         </div>
       </DialogContent>
     </Dialog>
