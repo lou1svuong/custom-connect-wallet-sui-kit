@@ -10,12 +10,12 @@ export default function Hero() {
     <div className="w-full flex justify-between divide-x">
       <div className="relative hidden md:flex w-1/3 aspect-square items-center justify-center group/titan border-dashed">
         <Image
-          src="/assets/logo/sui.svg"
+          src="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/i5/214ac6fc-f6dd-4317-8b2b-b560af90db4a.png"
           alt="Sui"
           width={100}
           height={100}
           unoptimized
-          className="size-full object-cover p-8 dark:invert"
+          className="object-cover size-full"
         />
         <div className="absolute top-0 left-0 size-4 border-t-2 border-l-2 border-foreground opacity-0 group-hover/titan:opacity-100 transition-all duration-200"></div>
         <div className="absolute top-0 right-0 size-4 border-t-2 border-r-2 border-foreground opacity-0 group-hover/titan:opacity-100 transition-all duration-200"></div>
