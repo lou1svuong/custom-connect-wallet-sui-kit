@@ -25,7 +25,6 @@ import { Badge } from "../ui/badge";
 import { useCopyToClipboard } from "@/hooks/use-copy-to-clipboard";
 import { toast } from "sonner";
 import { Avatar, AvatarFallback, AvatarImage } from "../ui/avatar";
-import avatar from "animal-avatar-generator";
 
 const NETWORKS = [
   { id: "sui:mainnet", name: "Mainnet" },
