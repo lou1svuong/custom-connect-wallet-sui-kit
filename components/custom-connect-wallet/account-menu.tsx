@@ -119,7 +119,7 @@ export function AccountMenu({ onClose }: { onClose: () => void }) {
             <AvatarImage
               src={`https://api.dicebear.com/7.x/bottts/svg?seed=${currentAccount.address}`}
               alt={currentAccount.address}
-              className="rounded-full bg-muted p-1"
+              className="rounded-full bg-muted p-1 select-none"
             />
             <AvatarFallback className="rounded-full">
               {currentAccount.address?.charAt(0)}
