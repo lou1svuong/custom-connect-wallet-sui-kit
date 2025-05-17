@@ -1,7 +1,7 @@
 ---
-description: Optimized Next.js TypeScript Best Practices with Modern UI/UX
+description: 
 globs: 
-alwaysApply: false
+alwaysApply: true
 ---
 # Optimized Next.js TypeScript Best Practices with Modern UI/UX
 
@@ -15,7 +15,7 @@ alwaysApply: false
 ## UI and Styling
 - Use Tailwind CSS for styling with consistent patterns:
   - Use dashed borders (`border-dashed`) for cards and containers
-  - Maintain consistent spacing with `gap-6` and `p-8`
+  - Maintain consistent spacing with `gap-4` and `p-4`
   - Use `max-w-4xl` for content width constraints
   - Implement responsive design with mobile-first approach
 - Follow terminal-like UI patterns for certain components:
