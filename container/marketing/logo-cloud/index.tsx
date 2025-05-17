@@ -1,9 +1,10 @@
 import { InfiniteSlider } from "@/components/ui/infinite-slider";
 import ProgressiveBlur from "@/components/ui/progressive-blur";
+import Image from "next/image";
 
 export default function LogoCloud() {
   return (
-    <div className="bg-background overflow-hidden border-t border-dashed py-4 lg:py-0  divide-x">
+    <section className="bg-background overflow-hidden border-t border-dashed py-4 lg:py-0  divide-x">
       <div className="group relative">
         <div className="flex flex-col items-center md:flex-row">
           <div className="flex items-center ml-4">
@@ -12,79 +13,49 @@ export default function LogoCloud() {
           </div>
           <div className="relative py-6 md:w-[calc(100%-11rem)]">
             <InfiniteSlider speedOnHover={20} speed={40} gap={112}>
-              <div className="flex">
-                <img
-                  className="mx-auto h-5 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/nvidia.svg"
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/assets/logo/sui.webp"
                   alt="Nvidia Logo"
-                  height="20"
-                  width="auto"
+                  height={50}
+                  width={50}
+                  className="mx-auto size-8 w-fit"
                 />
+                <p className="text-muted-foreground text-xl font-bold">Sui</p>
               </div>
-
-              <div className="flex">
-                <img
-                  className="mx-auto h-4 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/column.svg"
-                  alt="Column Logo"
-                  height="16"
-                  width="auto"
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/assets/logo/aqua-move.png"
+                  alt="Nvidia Logo"
+                  height={50}
+                  width={50}
+                  className="mx-auto size-10 w-fit"
                 />
+                <p className="text-muted-foreground text-xl font-bold">
+                  Aqua Move
+                </p>
               </div>
-              <div className="flex">
-                <img
-                  className="mx-auto h-4 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/github.svg"
-                  alt="GitHub Logo"
-                  height="16"
-                  width="auto"
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/assets/logo/sui.webp"
+                  alt="Nvidia Logo"
+                  height={50}
+                  width={50}
+                  className="mx-auto size-8 w-fit"
                 />
+                <p className="text-muted-foreground text-xl font-bold">Sui</p>
               </div>
-              <div className="flex">
-                <img
-                  className="mx-auto h-5 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/nike.svg"
-                  alt="Nike Logo"
-                  height="20"
-                  width="auto"
+              <div className="flex items-center gap-2">
+                <Image
+                  src="/assets/logo/aqua-move.png"
+                  alt="Nvidia Logo"
+                  height={50}
+                  width={50}
+                  className="mx-auto size-10 w-fit"
                 />
-              </div>
-              <div className="flex">
-                <img
-                  className="mx-auto h-5 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/lemonsqueezy.svg"
-                  alt="Lemon Squeezy Logo"
-                  height="20"
-                  width="auto"
-                />
-              </div>
-              <div className="flex">
-                <img
-                  className="mx-auto h-4 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/laravel.svg"
-                  alt="Laravel Logo"
-                  height="16"
-                  width="auto"
-                />
-              </div>
-              <div className="flex">
-                <img
-                  className="mx-auto h-7 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/lilly.svg"
-                  alt="Lilly Logo"
-                  height="28"
-                  width="auto"
-                />
-              </div>
-
-              <div className="flex">
-                <img
-                  className="mx-auto h-6 w-fit dark:invert"
-                  src="https://html.tailus.io/blocks/customers/openai.svg"
-                  alt="OpenAI Logo"
-                  height="24"
-                  width="auto"
-                />
+                <p className="text-muted-foreground text-xl font-bold">
+                  Aqua Move
+                </p>
               </div>
             </InfiniteSlider>
 
@@ -103,6 +74,6 @@ export default function LogoCloud() {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 }

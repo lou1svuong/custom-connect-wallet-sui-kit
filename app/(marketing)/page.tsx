@@ -1,6 +1,9 @@
+import CallToAction from "@/container/marketing/call-to-action";
+import FAQs from "@/container/marketing/faqs";
 import Feature from "@/container/marketing/feature";
 import Hero from "@/container/marketing/hero";
 import LogoCloud from "@/container/marketing/logo-cloud";
+import Testimonial from "@/container/testimonial/page";
 
 export default function Home() {
   return (
@@ -9,6 +12,9 @@ export default function Home() {
         <Hero />
         <Feature />
         <LogoCloud />
+        <FAQs />
+        <Testimonial />
+        <CallToAction />
       </div>
     </div>
   );

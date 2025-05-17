@@ -13,11 +13,11 @@ import {
 export default function Feature() {
   return (
     <div className="w-full border-t border-dashed">
-      <div className="p-4 border-b border-dashed">
-        <h2 className="text-md font-semibold font-heading tracking-tight">
+      <div className="p-4 border-b border-dashed ">
+        <h2 className="text-3xl font-semibold font-heading tracking-tight">
           Key Features
         </h2>
-        <p className="text-sm text-muted-foreground">
+        <p className="text-muted-foreground">
           Discover what makes our platform special
         </p>
       </div>
@@ -28,7 +28,7 @@ export default function Feature() {
             href={feature.link}
             target="_blank"
             className={cn(
-              "relative w-full p-6 hover:bg-muted/50 transition-all duration-150 group/item border-dashed",
+              "relative w-full p-4 hover:bg-muted/50 transition-all duration-150 group/item border-dashed",
               {
                 "border-b": index < featureConfig.length - 1,
                 "md:border-b-0": index >= featureConfig.length - 2,

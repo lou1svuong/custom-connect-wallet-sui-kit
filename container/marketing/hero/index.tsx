@@ -7,11 +7,11 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <div className="w-full flex justify-between divide-x">
+    <section className="w-full flex justify-between divide-x">
       <div className="relative hidden md:flex w-1/3 aspect-square items-center justify-center group/titan border-dashed">
         <Image
-          src="https://images.lumacdn.com/cdn-cgi/image/format=auto,fit=cover,dpr=2,background=white,quality=75,width=400,height=400/event-covers/i5/214ac6fc-f6dd-4317-8b2b-b560af90db4a.png"
-          alt="Sui"
+          src="/assets/images/goku.svg"
+          alt="Goku"
           width={100}
           height={100}
           unoptimized
@@ -65,6 +65,6 @@ export default function Hero() {
           </Button>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
