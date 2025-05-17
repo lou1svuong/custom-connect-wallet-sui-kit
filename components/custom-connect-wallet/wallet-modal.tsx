@@ -46,30 +46,57 @@ export function WalletModal({ open, onOpenChange }: WalletModalProps) {
   dark:[&::-webkit-scrollbar-track]:bg-neutral-700
   dark:[&::-webkit-scrollbar-thumb]:bg-neutral-500"
             >
-              {[...configuredWallets, ...detectedWallets].map((wallet) => (
-                <Button
-                  key={wallet.name}
-                  variant="outline"
-                  className={cn(
-                    "w-full justify-start gap-2 h-12 border-dashed",
-                    !wallet.installed && "opacity-50"
-                  )}
-                  onClick={() => handleWalletSelect(wallet.name)}
-                >
-                  {wallet.iconUrl && (
-                    <img
-                      src={wallet.iconUrl}
-                      alt={wallet.name}
-                      className="w-6 h-6"
-                    />
-                  )}
-                  <span>
-                    {wallet.installed
-                      ? `Connect to ${wallet.name}`
-                      : `Install ${wallet.name}`}
-                  </span>
-                </Button>
-              ))}
+              {/* Installed Wallets */}
+              <div className="flex flex-col gap-2">
+                <h3 className="text-sm font-semibold text-muted-foreground mb-1">
+                  Installed Wallets
+                </h3>
+                {[...configuredWallets, ...detectedWallets]
+                  .filter((wallet) => wallet.installed)
+                  .map((wallet) => (
+                    <Button
+                      key={wallet.name}
+                      variant="outline"
+                      className="w-full justify-start gap-2 h-12 border-dashed"
+                      onClick={() => handleWalletSelect(wallet.name)}
+                    >
+                      {wallet.iconUrl && (
+                        <img
+                          src={wallet.iconUrl}
+                          alt={wallet.name}
+                          className="w-6 h-6"
+                        />
+                      )}
+                      <span>Connect to {wallet.name}</span>
+                    </Button>
+                  ))}
+              </div>
+
+              {/* Uninstalled Wallets */}
+              <div className="flex flex-col gap-2 mt-4">
+                <h3 className="text-sm font-semibold text-muted-foreground mb-1">
+                  Available Wallets
+                </h3>
+                {[...configuredWallets, ...detectedWallets]
+                  .filter((wallet) => !wallet.installed)
+                  .map((wallet) => (
+                    <Button
+                      key={wallet.name}
+                      variant="outline"
+                      className="w-full justify-start gap-2 h-12 border-dashed opacity-50"
+                      onClick={() => handleWalletSelect(wallet.name)}
+                    >
+                      {wallet.iconUrl && (
+                        <img
+                          src={wallet.iconUrl}
+                          alt={wallet.name}
+                          className="w-6 h-6"
+                        />
+                      )}
+                      <span>Install {wallet.name}</span>
+                    </Button>
+                  ))}
+              </div>
             </div>
           </div>
           {/* Right: Onboarding Info */}
