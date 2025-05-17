@@ -11,7 +11,7 @@ export default function Home() {
       <div className="w-full max-w-7xl mx-auto border border-dashed flex flex-col my-2">
         <Hero />
         <Feature />
-        <LogoCloud />
+        {/* <LogoCloud /> */}
         <FAQs />
         <Testimonial />
         <CallToAction />

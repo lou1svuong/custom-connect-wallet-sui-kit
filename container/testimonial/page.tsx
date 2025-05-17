@@ -86,7 +86,7 @@ export default function Testimonial() {
             <div key={chunkIndex} className="space-y-2">
               {chunk.map(({ name, role, quote, image }, index) => (
                 <Card key={index} className="overflow-hidden">
-                  <CardContent className="grid grid-cols-[auto_1fr] gap-4 p-4">
+                  <CardContent className="grid grid-cols-[auto_1fr] gap-4 p-2">
                     <Avatar className="size-10">
                       <AvatarImage
                         alt={name}
