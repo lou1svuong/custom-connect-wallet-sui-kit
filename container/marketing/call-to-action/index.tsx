@@ -1,16 +1,20 @@
+import Background from "@/components/background/novatrixbg";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
 export default function CallToAction() {
   return (
-    <section className="p-4 border-t border-dashed">
+    <section className="relative p-4 border-t border-dashed py-12 md:py-20 w-full">
+      <div className="absolute -inset-0 -z-10 backdrop-blur-lg size-full overflow-hidden">
+        <Background />
+      </div>
       <div className="flex flex-col lg:flex-row gap-4">
         {/* Left side - Content */}
         <div className="flex-1 text-left">
-          <h2 className="text-balance text-3xl font-semibold">
+          <h2 className="text-3xl font-bold text-black">
             Start Building Your Web3 Journey
           </h2>
-          <p className="text-lg text-muted-foreground">
+          <p className="text-gray-800 ">
             Join thousands of developers building the future of decentralized
             applications on Sui Network.
           </p>
@@ -19,16 +23,10 @@ export default function CallToAction() {
             <Button
               asChild
               size="lg"
-              className="bg-primary hover:bg-primary/90"
+              className="bg-black text-white hover:bg-black/90"
             >
               <Link href="/">
                 <span>Get Started</span>
-              </Link>
-            </Button>
-
-            <Button asChild size="lg" variant="outline">
-              <Link href="/">
-                <span>Book Demo</span>
               </Link>
             </Button>
           </div>

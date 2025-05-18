@@ -1,3 +1,4 @@
+import Footer from "@/components/layouts/footer";
 import CallToAction from "@/container/marketing/call-to-action";
 import FAQs from "@/container/marketing/faqs";
 import Feature from "@/container/marketing/feature";
@@ -13,8 +14,9 @@ export default function Home() {
         <Feature />
         {/* <LogoCloud /> */}
         <FAQs />
-        <Testimonial />
+        {/* <Testimonial /> */}
         <CallToAction />
+        <Footer />
       </div>
     </div>
   );

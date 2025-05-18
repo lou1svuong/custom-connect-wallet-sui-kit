@@ -21,7 +21,7 @@ export default function Header() {
       </div>
 
       <Button
-        className="h-full border-dashed"
+        className="h-full border-dashed hidden md:flex"
         size="lg"
         variant="ghost"
         asChild
@@ -34,6 +34,23 @@ export default function Header() {
           </div>
         </Link>
       </Button>
+
+      {Object.entries(siteConfig.socials).map(([key, value]) => {
+        const Icon = value.icon;
+        return (
+          <Button
+            key={key}
+            variant="ghost"
+            asChild
+            className="h-full border-dashed aspect-square hidden md:flex"
+          >
+            <Link href={value.href} target="_blank" className="gap-2">
+              <Icon className="size-4" />
+            </Link>
+          </Button>
+        );
+      })}
+
       <ConnectButton className="h-full border-dashed" />
       <ThemeToggler className="border-dashed size-10 md:size-14" />
     </div>
