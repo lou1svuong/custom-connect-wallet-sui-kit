@@ -6,13 +6,18 @@ import Link from "next/link";
 import Spline from "@splinetool/react-spline";
 export default function Hero() {
   return (
-    <section className="w-full min-h-[80vh] flex divide-x">
-      <div className="flex-1 flex flex-col">
+    <section className="w-full  flex divide-x">
+      <div className="flex-1 flex flex-col relative">
         <Header />
+
         <div
           id="hero"
-          className=" relative flex  flex-col py-12 p-4 backdrop-blur-lg overflow-hidden"
+          className=" relative flex lg:min-h-[60vh] flex-col py-12 p-4 backdrop-blur-lg overflow-hidden"
         >
+          <div className="absolute top-0 bottom-0 left-100 hidden lg:block -z-10 w-6/7 h-[110%] -ratote-15">
+            <Spline scene="https://prod.spline.design/tYqLLCrJ14AFx6MC/scene.splinecode" />
+            <div className="absolute inset-0  opacity-20 mix-blend-multiply z-0"></div>
+          </div>
           <h1 className="head-text-md">CommandOSS Hacker House HCMC </h1>
           <p className="text-muted-foreground max-w-3xl border-l-4 border-foreground pl-2">
             Building software and exploring Web3 technologies.
