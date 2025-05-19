@@ -6,10 +6,9 @@ import Link from "next/link";
 import Spline from "@splinetool/react-spline";
 export default function Hero() {
   return (
-    <section className="w-full  flex divide-x">
+    <section className="w-full flex divide-x">
       <div className="flex-1 flex flex-col relative">
         <Header />
-
         <div
           id="hero"
           className=" relative flex lg:min-h-[60vh] flex-col py-12 p-4 backdrop-blur-lg overflow-hidden"
