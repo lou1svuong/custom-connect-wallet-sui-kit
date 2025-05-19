@@ -9,7 +9,7 @@ import Testimonial from "@/container/testimonial/page";
 export default function Home() {
   return (
     <div className="w-full md:overflow-hidden flex flex-col items-center justify-center">
-      <div className="w-full max-w-7xl mx-auto border border-dashed flex flex-col my-2">
+      <div className="w-full mx-auto border border-dashed flex flex-col my-2">
         <Hero />
         <Feature />
         {/* <LogoCloud /> */}
