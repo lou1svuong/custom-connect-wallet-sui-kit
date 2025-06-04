@@ -9,17 +9,8 @@ export default function Header() {
   return (
     <div
       id="nav"
-      className="w-full flex items-center justify-end border-b border-dashed divide-x"
+      className="h-14 flex items-center  border-b border-dashed divide-x"
     >
-      <div
-        id="brand"
-        className="font-mono text-sm flex-1 flex items-center h-full px-3 border-dashed"
-      >
-        <Link href="/" className="hover:underline">
-          {siteConfig.origin.replace("https://", "")}
-        </Link>
-      </div>
-
       <Button
         className="h-full border-dashed hidden md:flex"
         size="lg"
