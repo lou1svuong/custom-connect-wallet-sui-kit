@@ -32,7 +32,8 @@
     "react-dom": "^19.0.0",
     "react-use-measure": "^2.1.7",
     "sonner": "^2.0.3",
-    "tailwind-merge": "^3.3.0"
+    "tailwind-merge": "^3.3.0",
+    "verify": "link:@mysten/sui/verify"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
