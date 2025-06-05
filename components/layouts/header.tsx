@@ -9,10 +9,22 @@ export default function Header() {
   return (
     <div
       id="nav"
-      className="h-14 flex items-center  border-b border-dashed divide-x"
+      className="w-full h-14 flex items-center justify-end border border-dashed divide-x"
     >
+      <div
+        id="brand"
+        className="font-mono text-sm flex-1 flex items-center h-full px-3 border-dashed"
+      >
+        <Link href="/" className="hover:underline hidden md:inline-block">
+          Connect Wallet UI Kit
+        </Link>
+        <Link href="/" className="hover:underline md:hidden">
+          CWU KIT
+        </Link>
+      </div>
+
       <Button
-        className="h-full border-dashed hidden md:flex"
+        className="h-full border-dashed"
         size="lg"
         variant="ghost"
         asChild
@@ -43,7 +55,7 @@ export default function Header() {
       })}
 
       <ConnectButton className="h-full border-dashed" />
-      <ThemeToggler className="border-dashed size-10 md:size-14" />
+      <ThemeToggler className="border-dashed h-full" />
     </div>
   );
 }
