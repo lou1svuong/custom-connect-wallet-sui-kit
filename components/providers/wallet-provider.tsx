@@ -27,11 +27,6 @@ export function WalletProviders({ children }: { children: any }) {
     mainnet: { url: getFullnodeUrl("mainnet") },
   });
 
-  // const [mounted, setMounted] = React.useState(false);
-
-  // React.useEffect(() => {
-  //   setMounted(true);
-  // }, []);
   const queryClient = new QueryClient();
 
   return (
