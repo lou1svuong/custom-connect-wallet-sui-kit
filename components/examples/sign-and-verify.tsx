@@ -74,7 +74,7 @@ export default function SignAndVerifyCard() {
   };
 
   return (
-    <Card className="w-full max-w-7xl border border-dashed ">
+    <Card className="w-full border border-dashed ">
       <CardHeader className="text-center">
         <div className="mx-auto bg-primary/10 text-primary p-2 rounded-full w-fit mb-3">
           <KeyRound className="h-6 w-6" />
