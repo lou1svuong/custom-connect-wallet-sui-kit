@@ -80,6 +80,9 @@ importers:
       tailwind-merge:
         specifier: ^3.3.0
         version: 3.3.0
+      verify:
+        specifier: link:@mysten/sui/verify
+        version: link:@mysten/sui/verify
     devDependencies:
       '@eslint/eslintrc':
         specifier: ^3
